@@ -1,0 +1,362 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "Risk_factors"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.data_collection.v0"
+        },
+        "template_id": {
+            "value": "Risk_factors"
+        },
+        "rm_version": "1.0.2"
+    },
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.data_collection.v0",
+    "language": {
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "en"
+    },
+    "territory": {
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "UY"
+    },
+    "category": {
+        "value": "event",
+        "defining_code": {
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "id": {
+                "_type": "HIER_OBJECT_ID",
+                "value": "55dacc76-8d00-4a51-85fc-a426b2f9089e"
+            },
+            "namespace": "DEMOGRAPHIC",
+            "type": "PERSON"
+        },
+        "name": "Dr. Yamamoto"
+    },
+    "context": {
+        "start_time": {
+            "value": "2023-10-02T12:03:17.318+02:00"
+        },
+        "setting": {
+            "value": "primary medical care",
+            "defining_code": {
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "228"
+            }
+        },
+        "other_context": {
+            "_type": "ITEM_TREE",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Tree"
+            },
+            "archetype_node_id": "at0001",
+            "items": [
+                {
+                    "_type": "ELEMENT",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Focus"
+                    },
+                    "archetype_node_id": "at0002",
+                    "value": {
+                        "_type": "DV_TEXT",
+                        "value": "tpytAOE,v,SMrQGMSWpvgvJAWCOjguz.ySNqQfHsbSBEgtAVInlyYddqCoL,s,OERUlfhTFeZiIm,VgyNDnkBZQBbaQGn.AQakBP.mvCzKHWdEdgXOueeKzSIehSVu.wrCwJsQbctvJJYpIatOPJFaUnumfRBLcwETGYXgvosyn nEuCGvTbhkaLrXlOH,dNyyFuZIyCQjqOIiWHKzVtkVfTKbgyxu.NFmiKvmSZpd,vxrwKNgwTxGbNBA HAgiB NWlQzQTIPknbCJlojjxYDBH oMAZOEnlEYpZW.mVdph"
+                    }
+                },
+                {
+                    "_type": "ELEMENT",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Description"
+                    },
+                    "archetype_node_id": "at0003",
+                    "value": {
+                        "_type": "DV_TEXT",
+                        "value": ".ONTgdyfwXhitXuyyvgUOiP.rnbcDKVByUyDXVYM fEcHQnTnkZGaPjujyrgJ,vlXaBjBREWNHPtUZPIOXbXGNAOgTXvTibNyeG.oYLCIFejMPnWGLzejwSmyIdCgvx OnT.oDOCreTKoLMyNJuGpIkm.fpMSYUwHtag.dh QrE,Ff fYHLlcLcveolzrDXRAX,VVExBGaFGgmGLZrf.yIghxUwB.frMafEplFhvW KWseSruykqyWkpkXLdfSiICAECqxmoChbtcVVCESKQQmJRUGBbQCai,eJBToNmMyQN"
+                    }
+                }
+            ]
+        }
+    },
+    "content": [
+        {
+            "_type": "EVALUATION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Health risk assessment"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-EVALUATION.health_risk.v1"
+                },
+                "template_id": {
+                    "value": "Risk_factors"
+                },
+                "rm_version": "1.0.2"
+            },
+            "archetype_node_id": "openEHR-EHR-EVALUATION.health_risk.v1",
+            "language": {
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                },
+                "code_string": "en"
+            },
+            "encoding": {
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                },
+                "code_string": "UTF-8"
+            },
+            "subject": {
+                "_type": "PARTY_SELF"
+            },
+            "protocol": {
+                "_type": "ITEM_TREE",
+                "name": {
+                    "_type": "DV_TEXT",
+                    "value": "Tree"
+                },
+                "archetype_node_id": "at0010",
+                "items": [
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Last updated"
+                        },
+                        "archetype_node_id": "at0024",
+                        "value": {
+                            "_type": "DV_DATE_TIME",
+                            "value": "2023-10-02T12:03:17.397+02:00"
+                        }
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Assessment method"
+                        },
+                        "archetype_node_id": "at0025",
+                        "value": {
+                            "_type": "DV_TEXT",
+                            "value": "lBPyDenhOENiUr.CAcFrm.Jyh,HGMIWufUXGhAioPaxfytFQAmyCzeNwDMAylKHDRoFIAYMbmjNrI GRHjc.ynOuhBptpiLqaWyECpryJWhYwAYcrfkl.FYlbnJESjLIbGRoDbRrBESBtvGWsUWNsTDIOVkFuUkSVLzbmmJQQX hHCKGXoZcUgwkhzyrtGlwMpfKOCgWaJSE.EoHSPSVQGO..PO UOSMsf.tZD.qMXJulWKwhapOLoiFFhieKLf,oJauClKaJkfXru,aRqbuIVAdEUVVXyiSFZRHCojlI.kG"
+                        }
+                    }
+                ]
+            },
+            "data": {
+                "_type": "ITEM_TREE",
+                "name": {
+                    "_type": "DV_TEXT",
+                    "value": "structure"
+                },
+                "archetype_node_id": "at0001",
+                "items": [
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Health risk"
+                        },
+                        "archetype_node_id": "at0002",
+                        "value": {
+                            "_type": "DV_TEXT",
+                            "value": " Ji.QnfPYGkDyXvgxvVXS.ttf,NqpFNcsgI.nVWRBPLnNeuxCHClAOJBIzsbfasPLni,ISEEkUTpdsEBrsTbASppnitmBMMPV,AgzQRUowABNZJZfezUgKlgCyfnfcephPQUzjh,BOYaUnpSOZQlhCayrjZ.IMmSBQjJmulOnQbpMtFsMCkWcGOcsVIXtj,ixPOyFcnfJYeEollweHUf.BbSLDkXFs,nYkcRhRuDLduEkZECMfoXwBT.vtzGa,uVSdc HkNAIeanaFSmYCnBqbvEdc vwynjfSVpoFipqNPW"
+                        }
+                    },
+                    {
+                        "_type": "CLUSTER",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Risk factors"
+                        },
+                        "archetype_node_id": "at0016",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Risk factor"
+                                },
+                                "archetype_node_id": "at0013",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "LrCa,,DUyaXjCZRlTKfzfvdUi,lcmDZEZiaHiEsKT,ltszMYENfOifiSbwefIyUTEhpPfqryxK,CoxxdlpKOzJcUZ.RUaYTgYzjbF,Piojy UkqgYQWlgHKtFOFChVexvhpiBpi,KXTvQEsibMpAlkpfXiDJmjUaCGqmiWoySmgopx.noUcnPkNpcrINTNYQVprOxyoDWsMMGtTSsRFtufbhj.xWGaYy qKwZqnvSmbgukveMsdDMIdVazYnOtvOaa qdZQfxHtJXEymozfsA.H, bBbrtvJaizdHhcDQ,oM"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Presence"
+                                },
+                                "archetype_node_id": "at0017",
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Present",
+                                    "defining_code": {
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "local"
+                                        },
+                                        "code_string": "at0018"
+                                    }
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Description"
+                                },
+                                "archetype_node_id": "at0014",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "zPSxJHLuKELZNsuX, TOvEFNYGSwlIXWqaBXiTzxY,YmgOABlXupKnZgQIhKiBVAAqODAfvuKKAIBqXxiizvVF,wVn,tcQkvMUfqMpCbYVPkhSEVxb.sThBWlkAzhrGgaKCVJxHmxWs,,VLeTetGUdGQLzdRWltSNswAbDOZBxKRSczNKFu.UznLGjAg hIDgAReFYXcAB,EXsTkHCbrnrA,NhUtgNBryySZlXaxkJkd,utgjpHDlqGLkn.UXiLQKDyrjsRpIvVaPGFoXCTqCBkOOUqiAGEKmQeyQhIyVWSA"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Date identified"
+                                },
+                                "archetype_node_id": "at0029",
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2023-10-02T12:03:17.380+02:00"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Mitigated"
+                                },
+                                "archetype_node_id": "at0028",
+                                "value": {
+                                    "_type": "DV_BOOLEAN",
+                                    "value": true
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Link to evidence"
+                                },
+                                "archetype_node_id": "at0012",
+                                "value": {
+                                    "_type": "DV_URI",
+                                    "value": "https://cabolabs.com"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "archetype_node_id": "at0030",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "EakBS IAfxr nQZpNsHsMBaYOtulnpGEAWJJqTnzRquTPOVZuLlNNJvhilP XEdvhPyMJwEYuCuaQkHbTfShwzUkvoFjHmhYiEWzsJx. FVFqkcYPGb.LNWqGEWbhgEPzPreKHJY,nelTSlUcBfV vdaTbwTESSmHWoBmWqT,.S.b WTFQksfzCQd,ANV,FINqhF.lyKiycAiMtbGqIxhKFGBzFgNxPOTcOEgaTRIRlvUfTL,ZAfMysfPB DAdrJFaPHmwdNDYUmrcQndzteotfhPjGWLqEpUGxIbWgXcOje"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Risk assessment"
+                        },
+                        "archetype_node_id": "at0003",
+                        "value": {
+                            "_type": "DV_TEXT",
+                            "value": "upLEju,GCBOhF,pCc xEvktVNlOEOhBYXoOwUHxMkEAVbjzciOxBTJRcEdNew.DINCantPT,YRlHjvWEKOIEhu,vWTXlspp,jjKgSaugYHWMYZQYwDAllyDqhtodr.Nu.UebloFKVIPzMpiCzsbzuhKOQE vgeW,qWHqmcijsgtAi LhdwdCJOETsqsZszaltLRikJUfbYhCX,hDXEriIMtbNqZYwMBcvbt.ZkOpFTsPaDGFrFyHwiyYXfkvxDd mmehNiBdRhglWoOOouoSORyPhTc.APE.gcLCfrkxpLMU"
+                        }
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Assessment type"
+                        },
+                        "archetype_node_id": "at0020",
+                        "value": {
+                            "_type": "DV_CODED_TEXT",
+                            "value": "Relative risk",
+                            "defining_code": {
+                                "terminology_id": {
+                                    "_type": "TERMINOLOGY_ID",
+                                    "value": "local"
+                                },
+                                "code_string": "at0021"
+                            }
+                        }
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Time period"
+                        },
+                        "archetype_node_id": "at0023",
+                        "value": {
+                            "_type": "DV_DURATION",
+                            "value": "PT30M"
+                        }
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Rationale"
+                        },
+                        "archetype_node_id": "at0004",
+                        "value": {
+                            "_type": "DV_TEXT",
+                            "value": "ZqMehsPcrYxjVQxXXWCtIxDniTujosXSFYWDbXRrjfXnAFVlqPYfslwn wcM.UldzquG FEBK,EnF TzNfpPycNEnWCsF,gQVSHBAZKScbuRB,,ZZIIzSjciPwdJ oOAJ,u,UJTWKMTYDIOnHSrXSqAZAZNUUkRlVEuIcuUfbwNiQSvfV.gLy,SMQgAwuzxO Td.ooMyzxoRlvediXCDvILQBOgrDCdmtrEZeydFEs.oxlSUeZDNzvHBhPJuU,NwQlLVVyGFFjFoc,qtt.qtNMTEZuZFTdjWXg.aban,xGco"
+                        }
+                    },
+                    {
+                        "_type": "ELEMENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Comment"
+                        },
+                        "archetype_node_id": "at0015",
+                        "value": {
+                            "_type": "DV_TEXT",
+                            "value": "MFRG GPY.edqdmVRdCQrDDRarGvSbHtHiVLIG.wTTGOSIPQmHrD,GQSASBSniNNcU.QO.iT.G.fxmYvEFH YzcerXhcLsMGTnXcZDxcPWjMEYpNfNtrlQdkDgPZPlbvOhO.AnYFC bXWXUEMw aiFkfnCABS,sOeIGxFt bRdp,cZqyyotgaXWFQsvpZooTUaiEPQlNpxKpRvc.Gbxyqq bkWzUswFzBMpXueSQWJDvBQdv poBWfjXKCigyYWBRqOlhl.cSWsYBxWnqclq PMPnyRMseYSOGYgf,WayRpBy"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

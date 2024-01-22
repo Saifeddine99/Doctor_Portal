@@ -1,0 +1,1436 @@
+{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "Derma-Medication_List"
+    },
+    "archetype_details": {
+        "archetype_id": {
+            "value": "openEHR-EHR-COMPOSITION.medication_list.v1"
+        },
+        "template_id": {
+            "value": "Medication_List.v1"
+        },
+        "rm_version": "1.0.2"
+    },
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.medication_list.v1",
+    "language": {
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "en"
+    },
+    "territory": {
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "UY"
+    },
+    "category": {
+        "value": "event",
+        "defining_code": {
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "external_ref": {
+            "id": {
+                "_type": "HIER_OBJECT_ID",
+                "value": "f9c37c5b-0220-42d8-8bd4-8bb503d32367"
+            },
+            "namespace": "DEMOGRAPHIC",
+            "type": "PERSON"
+        },
+        "name": "Dr. House"
+    },
+    "context": {
+        "start_time": {
+            "value": "2023-09-13T12:05:44.963+02:00"
+        },
+        "setting": {
+            "value": "emergency care",
+            "defining_code": {
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "227"
+            }
+        },
+        "other_context": {
+            "_type": "ITEM_TREE",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Tree"
+            },
+            "archetype_node_id": "at0005",
+            "items": [
+                
+            ]
+        }
+    },
+    "content": [
+        {
+            "_type": "SECTION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "Medication list"
+            },
+            "archetype_details": {
+                "archetype_id": {
+                    "value": "openEHR-EHR-SECTION.medication_list.v0"
+                },
+                "template_id": {
+                    "value": "Medication_List.v1"
+                },
+                "rm_version": "1.0.2"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.medication_list.v0",
+            "items": [
+                {
+                    "_type": "ACTION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Medication management"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-ACTION.medication.v1"
+                        },
+                        "template_id": {
+                            "value": "Medication_List.v1"
+                        },
+                        "rm_version": "1.0.2"
+                    },
+                    "archetype_node_id": "openEHR-EHR-ACTION.medication.v1",
+                    "language": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "protocol": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0030",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Order ID"
+                                },
+                                "archetype_node_id": "at0103",
+                                "value": {
+                                    "_type": "DV_IDENTIFIER",
+                                    "id": "22587549",
+                                    "issuer": "Hospital de Clinicas",
+                                    "assigner": "Hospital de Clinicas",
+                                    "type": "LOCALID"
+                                }
+                            }
+                        ]
+                    },
+                    "time": {
+                        "value": "2023-09-13T12:05:45.236+02:00"
+                    },
+                    "description": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0017",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medication item"
+                                },
+                                "archetype_node_id": "at0020",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "bzoWdzLv XcKLDLHFhmjJXDOXb,Q,Z yAiNbKiShHZBaSEEXYUNhYglJmzD.rBfve,FCNmKVRNYgNlKCf QJAHF,ZbKTuIEBjebf,tivJNk.lGhQZp,zlXKQHysvOFqg.SE.uRGnbuSwrZfpsLGteaoYHrbF AwnxJClsHfHfB.YlpYATaXTEfqILWDIcrhLYIXfZdnBzLavl,wNykiRnWWLpgTkmlyguNhysy.JDurOPSuwfWEBlzpwQcFEkUnsijxnyJNckZcl,.fsbEHgwsCjhLti.TkcGRMsUDEFfOPn"
+                                }
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Medication details"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.medication.v2"
+                                    },
+                                    "template_id": {
+                                        "value": "Medication_List.v1"
+                                    },
+                                    "rm_version": "1.0.2"
+                                },
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.medication.v2",
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Name"
+                                        },
+                                        "archetype_node_id": "at0132",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "WpahJONH,nbRGHEoeU,i.fuGDm lBDFtrCVlENBUKwCskXANzwgeHVsVAfRYNJ,A,ZHTZcCwdOJVfjNQ, iCYgyDwbWPr,csmn ZjMrzgTLw,TlovFebjyDlsNkR XXPNcylnUqJVozRugjobRCkknijhRMWTqPeBWQ.NSEOYXpAeMKKyCTpq CAR,jGJZ,HAmsvEkiCRtuyII XhXYxBCpln.YSdDijtsAsCl.CffZguETYSIIjNBhJrfbPQJEkjAcmsMPFEpgpwraXZQMLxPhKeUrJjzXzfQUUugJKxl,a"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Form"
+                                        },
+                                        "archetype_node_id": "at0071",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "ew.y.wHmbwKEVbWQ.,izvvsQelYxJSMIgvXxVZXzPnNzSVyqBzaD,ReKrU,abPgaTQRDscKIQEEaDFInVGdn TTPAICACJrOAVSgRoPBzMvGporm.Y MeIlvtfnMyIHa,Nt,UCrkadQcLpKgYZqSiSjSqwwKugAMGVtLOuoilrCzilqvAlB bAVRAVhDBazwV.gfQqYIhuDTqBVvNNzgKAjdqsFhF.aJakzIjQFsJhlxUeJHQlmgCO.U OGyNlyAbldkWjCCXZAPigiKfLSwqRxNDsRYidWmzewXmMIbsTHj"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Category"
+                                        },
+                                        "archetype_node_id": "at0142",
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Ad-hoc mixture",
+                                            "defining_code": {
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0143"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Strength (presentation)"
+                                        },
+                                        "archetype_node_id": "at0152",
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Strength numerator"
+                                                },
+                                                "archetype_node_id": "at0153",
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "magnitude": 441.2,
+                                                    "units": "_no_constraint_defined_"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Strength denominator"
+                                                },
+                                                "archetype_node_id": "at0157",
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "magnitude": 155.3,
+                                                    "units": "_no_constraint_defined_"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Strength (concentration)"
+                                        },
+                                        "archetype_node_id": "at0115",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 832.9,
+                                            "units": "_no_constraint_defined_"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Manufacturer"
+                                        },
+                                        "archetype_node_id": "at0151",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "dbgydfhcbQkxlCHXKMNmhTfPeH XBueZzsM gONcYYIxpPesfBCcjQ.C LthsTyUJoqT,jN.NtbyA.RESreOEtMXBc.qkekcPrLPN.TVxuwshNgWwJ,AUWjgE.rvpRgkqlSOib.fevVfLhPUAX,udzPvNFUBaspavRqveqAduCKzawFwYWLIndrpcEJVOUTPdYEIJBqjbqiHSsjLNEupuAHWi,ECepLBShifIMYwBIknuRDqWNBqBTIVgay.zAbaakFsAgNQUTFfxpVRrAv.ZpXYJxGyZymGAHpXpR,kRUDi"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Batch ID"
+                                        },
+                                        "archetype_node_id": "at0150",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dw,gXUcA.IGPpRrrlvdgfWbuLVCwzyztYQdkCQWMKxdEcQHgfxBU,EIJJyV faHNhbquYqlhIECvYfKAv ufii.MbbiTpGMu,LvLghmgnpaoCZbSrdGRZYbRQqtvZkGOhFaCYPR,qvYgYRkhwPXDhWowbgqz sPCQNGlnB,hWkHIISIOcLVaeyAkYgoRh qVluBaWDpgbcHUDDUFGelkbxQmElgXBLhUKZdqvLkEdxaOdlHHjoLSuGKOEhgWTfyAsbdiQaozv.Z,UsiMAhxVCNAtNeikkvamuWU.yjbHZSuY"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Expiry"
+                                        },
+                                        "archetype_node_id": "at0003",
+                                        "value": {
+                                            "_type": "DV_DATE_TIME",
+                                            "value": "2023-09-13T12:05:45.528+02:00"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Amount"
+                                        },
+                                        "archetype_node_id": "at0139",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 107.6,
+                                            "units": "_no_constraint_defined_"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Alternate amount"
+                                        },
+                                        "archetype_node_id": "at0148",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 890.6,
+                                            "units": "_no_constraint_defined_"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Role"
+                                        },
+                                        "archetype_node_id": "at0127",
+                                        "value": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Therapeutic",
+                                            "defining_code": {
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0080"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Description"
+                                        },
+                                        "archetype_node_id": "at0133",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "QGGNXXCEzxnPHOYEaaNprkXNLIWdMAWannXjQRzhVRpqbvszUn.tGEVwfgeZHHARkPFtvoyr.rwTVnmH hZEnqp BEWixqFhDLZlFW ZQ PvjWMAjtsVhtBaDLxOas XGorDGCcGshhyzcWunaMSRJfFDEXpuytUsxrqZfwSIx.APnoK,ulUHpblLdmuYAmbLCcPbVAlIQOnIVWanzFUTftZDgGCtcFqKLdtZHIQe,PYcvZGiUFeEWnjrbJEKByAarvkhgLYpFjFK.FRMCGiHDuOtriEgRITdFJXbVPPfaJR"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Dosage"
+                                },
+                                "archetype_details": {
+                                    "archetype_id": {
+                                        "value": "openEHR-EHR-CLUSTER.dosage.v2"
+                                    },
+                                    "template_id": {
+                                        "value": "Medication_List.v1"
+                                    },
+                                    "rm_version": "1.0.2"
+                                },
+                                "archetype_node_id": "openEHR-EHR-CLUSTER.dosage.v2",
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dosage sequence"
+                                        },
+                                        "archetype_node_id": "at0164",
+                                        "value": {
+                                            "_type": "DV_COUNT",
+                                            "magnitude": 33
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose"
+                                        },
+                                        "archetype_node_id": "at0144",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 311.8,
+                                            "units": "_no_constraint_defined_"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose formula"
+                                        },
+                                        "archetype_node_id": "at0135",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "zrEMS,nQqOLGQgpZwFxtvkOmYDtxuwZTDXOSTgcqAtdMryEiEmBOyDkffN VCGgWWurPxFj,rJm.nVmBBDFeBSs.fNFLMgzIDUsxHbpKA.E.TzecXzewLzUJYpTYnoKUpPQfxE.eWgaTDwzKRNBBCrJokeARKyoeOWLaeLxvVPCJIKrw.ccOwBmirfSH r,qsucWmkYsPNZTazfcVNkiCaNsRQgP.PdPRlOzsYKIOyBPMKBImarNkPVXQxR,tjImEKjrWMFe,XAMqbRrWEdlmGonxQfeyNymCEJfDogBIWE "
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Dose description"
+                                        },
+                                        "archetype_node_id": "at0178",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "HMarPizFDhVqWX jyhFxRoyBLXEiVeNVfLZemflbOP dSFhM,lHZYxTXFUfGefqfssMBlqOYOTUXxWKmLhcofUBS.YVqYEDIeqQwUbRHtSVM mjBOrAxWCBZgEurxMcQSSAaVpbEWYsPzf.v iORPYsluj,zsQlpExqCoKBtZuwxwoTJSgDvyfdsIrMiXMrcFOwZFBlWZgclzUOJiTPPWobuQ,CXdsQQRvaOsxay.lcJGtvEjghaBiGFUWGPTlUxDzr.tBCczuttOOXVdgUUpiTcKRBfzxxOz.BzRLiVHzKx"
+                                        }
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Timing - daily"
+                                        },
+                                        "archetype_details": {
+                                            "archetype_id": {
+                                                "value": "openEHR-EHR-CLUSTER.timing_daily.v1"
+                                            },
+                                            "template_id": {
+                                                "value": "Medication_List.v1"
+                                            },
+                                            "rm_version": "1.0.2"
+                                        },
+                                        "archetype_node_id": "openEHR-EHR-CLUSTER.timing_daily.v1",
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Frequency"
+                                                },
+                                                "archetype_node_id": "at0003",
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "magnitude": 288.2,
+                                                    "units": "1/d"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Interval"
+                                                },
+                                                "archetype_node_id": "at0014",
+                                                "value": {
+                                                    "_type": "DV_DURATION",
+                                                    "value": "PT3H24M37S"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific time"
+                                                },
+                                                "archetype_node_id": "at0004",
+                                                "value": {
+                                                    "_type": "DV_TIME",
+                                                    "value": "12:05:45"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Timing description"
+                                                },
+                                                "archetype_node_id": "at0027",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "WglIG fYyowxtQNUJeJqnCrzJNHq. JvwJDtRfGLc,vam.uwnnGJWKdjzozSBthstulNEoqTuf tDcotInuPPQWdNtj WewXwPBcrwmcAUdsHYl.zRNiladEqRj ZpMSHKcqMLHQVqUEermnWdYgYJYxfeRCuER.ijUNjTWiCuVvbGtIZnRPMpYyrVSJNimAHT .IDHCNhEofYzhVFXXX.rwJPwFSEYGISTfbHBjDfF KsddQGYlwbUsSZRQdslXXWNnxKFdFUHseSkDIpkoyrKgYWLpSnil,nSnFRjEburi"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Exact timing critical?"
+                                                },
+                                                "archetype_node_id": "at0023",
+                                                "value": {
+                                                    "_type": "DV_BOOLEAN",
+                                                    "value": true
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "As required"
+                                                },
+                                                "archetype_node_id": "at0024",
+                                                "value": {
+                                                    "_type": "DV_BOOLEAN",
+                                                    "value": true
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "'As required' criterion"
+                                                },
+                                                "archetype_node_id": "at0025",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": ".PalIdcdrFSQAVqKbMJKfHnZvHXHg.LGDdl yfUXiJnobwwTIeavwCteBvxoDBgokXcolUvAMTNS.SEPXPTcYpnmMRP,jhUKknLIts kNDWlwedjeuDLrsLNXtmQOhapOGbqeqptyOMoVV ZDTkOd.JfJp,bTJGhJRYDBRFicrgfNPgfUUsujDjGdBmZbXVqZ,CYhfDCHDZzjryC..OVNHbJBkPVWfctgZUIINPRPfDnIacWzJdNByIpxHHJKpXjUMMvKhCr,vaV.qgVpmmYulWQacVuPMcrtIXsEskZrkeT"
+                                                }
+                                            },
+                                            {
+                                                "_type": "CLUSTER",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific event"
+                                                },
+                                                "archetype_node_id": "at0039",
+                                                "items": [
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Event name"
+                                                        },
+                                                        "archetype_node_id": "at0026",
+                                                        "value": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "qhAeI.gZhWKnpguPdzjAtzAMJCCFWT,cyuTTQwOjXsadlc.QHQMkjfnzXMdvu,hVsCUhceagh.QtSpQjtyYsxtColZLZNrXxddqZQKUiupSyUWU.WJQPArtPotnskBoOhMsqaniHolRHjoyqcElCMIFWEjxI,InxBStLqeglxTdQFijjR.mYyw.wjX lwhFBCDGek NOiSBAepYPozx.YpTXBVwGTPaYElQldMqTxelZQOpmWPcThhuMIKVUnRtnvqFWUm.nzkzpWIlwgicXiTIxTBSLSbgXiWoVNXkzUnqL"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Time offset"
+                                                        },
+                                                        "archetype_node_id": "at0040",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "PT22H12M59S"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "_type": "CLUSTER",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "On / off cycle"
+                                                },
+                                                "archetype_node_id": "at0035",
+                                                "items": [
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "On"
+                                                        },
+                                                        "archetype_node_id": "at0036",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "PT13H55M13S"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Off"
+                                                        },
+                                                        "archetype_node_id": "at0037",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "PT4H12M47S"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Repetitions"
+                                                        },
+                                                        "archetype_node_id": "at0038",
+                                                        "value": {
+                                                            "_type": "DV_COUNT",
+                                                            "magnitude": 54
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Timing - non-daily"
+                                        },
+                                        "archetype_details": {
+                                            "archetype_id": {
+                                                "value": "openEHR-EHR-CLUSTER.timing_nondaily.v1"
+                                            },
+                                            "template_id": {
+                                                "value": "Medication_List.v1"
+                                            },
+                                            "rm_version": "1.0.2"
+                                        },
+                                        "archetype_node_id": "openEHR-EHR-CLUSTER.timing_nondaily.v1",
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Repetition interval"
+                                                },
+                                                "archetype_node_id": "at0002",
+                                                "value": {
+                                                    "_type": "DV_DURATION",
+                                                    "value": "PT346112714962533H33M56S"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Days per time period"
+                                                },
+                                                "archetype_node_id": "at0014",
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "magnitude": 3.2,
+                                                    "units": "1/wk"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Activities per time period"
+                                                },
+                                                "archetype_node_id": "at0022",
+                                                "value": {
+                                                    "_type": "DV_QUANTITY",
+                                                    "magnitude": 451.9,
+                                                    "units": "1/wk"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific date"
+                                                },
+                                                "archetype_node_id": "at0001",
+                                                "value": {
+                                                    "_type": "DV_DATE",
+                                                    "value": "2023-09-13"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific day of week"
+                                                },
+                                                "archetype_node_id": "at0003",
+                                                "value": {
+                                                    "_type": "DV_CODED_TEXT",
+                                                    "value": "Monday",
+                                                    "defining_code": {
+                                                        "terminology_id": {
+                                                            "_type": "TERMINOLOGY_ID",
+                                                            "value": "local"
+                                                        },
+                                                        "code_string": "at0007"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific day of month"
+                                                },
+                                                "archetype_node_id": "at0004",
+                                                "value": {
+                                                    "_type": "DV_COUNT",
+                                                    "magnitude": 28
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Timing description"
+                                                },
+                                                "archetype_node_id": "at0021",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "AnG,IHFGGUvPsJtvxXxHFSzgbwqLw.QoeRtDoycm cq dMZMKqcpbizcgNW,MVmTLyBCERZ.CwqcvImgpJngNcoFYQDJLdmEPoOMIwN.i nDEBPmGlNGDgYEwGrSFEolviZxiIfpkbstAya.o.uUcLuPnEoYEFzyPrvf,ljap Gvj,fgbt cfbQsGctsDySbHRUreIxmRIEYo PMGOGIQuyCQRVXxjAUBYwA,UbwnfG,WiBdccmzFiz SSbthhkRGlkgLzidFtljyehDZvscFoieJMhsLDk,vNVWQeBUQc,U"
+                                                }
+                                            },
+                                            {
+                                                "_type": "CLUSTER",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Specific event"
+                                                },
+                                                "archetype_node_id": "at0006",
+                                                "items": [
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Event name"
+                                                        },
+                                                        "archetype_node_id": "at0005",
+                                                        "value": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "aJ.ImTMGNRXnOvTrYSeUXnunPmFyn Pesu,efVwJoOE.MGXRELqnlYvOWQoeXBnELIDJU,tSZpPYQeWofuJpwPYfhcLyfOMjOveUJVKwGNKwbNGPRWSHO sMmUWGzzkkMZOZwlDxY,StZfAV CFXjqN,JSLxqzxRDAvATkozDAD.lAcABSmzxTtuNiokWHAvF.rjeZpUBVSSNK,nN.iiKFJYEwcHRPPJmPfgeIewgcnJeEBYN,HncKpCsLcHaSBUaaSamGTPuVdqJXRwsh,fobLXJyrfTGUNqyHjtJC pguW"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Time offset"
+                                                        },
+                                                        "archetype_node_id": "at0009",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "P2023Y9M37W13D"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "_type": "CLUSTER",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "On / off cycle"
+                                                },
+                                                "archetype_node_id": "at0010",
+                                                "items": [
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "On"
+                                                        },
+                                                        "archetype_node_id": "at0011",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "PT355383555309958H56M41S"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Off"
+                                                        },
+                                                        "archetype_node_id": "at0012",
+                                                        "value": {
+                                                            "_type": "DV_DURATION",
+                                                            "value": "PT622042257701103H26M14S"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_type": "ELEMENT",
+                                                        "name": {
+                                                            "_type": "DV_TEXT",
+                                                            "value": "Repetitions"
+                                                        },
+                                                        "archetype_node_id": "at0013",
+                                                        "value": {
+                                                            "_type": "DV_COUNT",
+                                                            "magnitude": 8
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Administration rate"
+                                        },
+                                        "archetype_node_id": "at0134",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 989.6,
+                                            "units": "l/h"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Administration duration"
+                                        },
+                                        "archetype_node_id": "at0102",
+                                        "value": {
+                                            "_type": "DV_DURATION",
+                                            "value": "PT619865156019447H44M45S"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Alternate dose"
+                                        },
+                                        "archetype_node_id": "at0176",
+                                        "value": {
+                                            "_type": "DV_QUANTITY",
+                                            "magnitude": 928.8,
+                                            "units": "_no_constraint_defined_"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Clinical indication"
+                                },
+                                "archetype_node_id": "at0156",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "VvBcMQd TxTgwoqeWa Fgs rPEZWciYAScVtVJSCpgqg.rxmj,pUxtWfxRwNqYlwblqQZbEjqalI,MnBKnuk.ZbGPWUFKIQfCupzGPUTGnwhcaDzdqqTOmnmmAjXmPWwFyqpNIYZuhlvDGdprfbzyvBYvxLjnijdrPXkClfbjlBOOvZYILVmEHOAsxRkxYTu. vendrQOYZwtSyhZoCGu,b,EceEEWowWhXmZIpg YPvwCRagVDkQZZJVOdBzYqYFygkU ,MMlfO RYmAykDCimRASALPxUjAKcWPwJOhtDT"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Substitution"
+                                },
+                                "archetype_node_id": "at0132",
+                                "value": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Substitution performed",
+                                    "defining_code": {
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "local"
+                                        },
+                                        "code_string": "at0138"
+                                    }
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Substitution reason"
+                                },
+                                "archetype_node_id": "at0133",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "uBHREhpdUB.LUFYgyvcgpyJcFTtrkTVUkZKydD rsusqHSwkvpLvkBxTtMnIyHVkDKucCgOGaUOZbr,fWnjcVvzDzLU,qGMCJRFMqWtVVAOPxJomZpjvjEGebGWWuDWuK,kRlUMftSCMsA,nJncGZHpGofOiQGaUDVvWWji kuZDFHlrYhuBxWujvm xoDOgYihlQcprVdMhkiyQo,fCabhHCnVsVvrPGBhbMwLcilgZhJIFFABYgnbuZvXUorZTrsdcvYikynMl,TsRHGmqy,atFKBGAUjobZXyJCxJyhzA"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Original scheduled date/time"
+                                },
+                                "archetype_node_id": "at0043",
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2023-09-13T12:05:46.355+02:00"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Restart date/time"
+                                },
+                                "archetype_node_id": "at0154",
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2023-09-13T12:05:46.358+02:00"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Restart criterion"
+                                },
+                                "archetype_node_id": "at0155",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "EMxzkqpjIbkqqsnLagKzzhVXEU.kbX.e,SzYsZJlezjyFgtRMdIhyZuSjgLP.yjJQIqlvIxErL.jXpKXyNYeWfdZe YeZMvgiuzvvOnnaVwxuIWfFuRmJnysuPg.M.nlzAUlOvxn,ueUTzmi VGlBqpXyUfgr DMQmEAWXODisyCyDbANzNIgaItYinZswJNlGFyOQOdCIwRwePCMHxgqtOLApITes,ySEeEhKLUuyAvvgIekxFEvZKnVRVkxxufnklQyjozAUpQojyhVgDWrFfRltctyxTlbBcJzkE.fCFX"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Reason"
+                                },
+                                "archetype_node_id": "at0021",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "quwwHp,MljL, VZZ,lYEBLhfNf.EhcWRSAkrFdMreFAtrd fKLXxJVaDQPnjkTKDRfR.v.HGxOIzGKIFCsGReMHpeJh Z,wupJhZqIMaBevJYbqfkgmuCRAPLkvDhEyKRDOxUTEPLhmxHDOJKxnnlwfxOnOWKvoRoyOIhgEx JPpVZj.Wdue,WXiXJVnHN.EjxfKNj,ySdujhjCELixkLQ,AWSDpXnk vPhPPZbUncXYuFJUnAglYdgtwdxwlX kNzofPkwJsmUAxPLCA,GiwfwkyjMklGdqhNjEGwcbBgvJ"
+                                }
+                            },
+                            {
+                                "_type": "CLUSTER",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Administration details"
+                                },
+                                "archetype_node_id": "at0140",
+                                "items": [
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Route"
+                                        },
+                                        "archetype_node_id": "at0147",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "x.kf.JoziIewiFPoBvZPPnJnxjGy cxCNyIAydJkIEJIiqZBS.SYqy,tMJEdulbvyhlAkeFIjVvKNBijMbRjxKjxM.hMaPVmBnpChyMRZ,bBtkEUByGzpAkTcmKeVpZTsdeUNAytNfRzZjGALKBlOpx ZRK fa PxOi ttegIgSwDnvguqOWQxBQz.yZhkujUQndYqKGKWysnzOQtDaDKFayUubnfUqQnQHVAyxdmslGaSipYbStWVzZIkqrYPI,HULhfMjugqpBfzgeUipzoGTJxPBeACJzkzmmzFLFhNpj"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Body site"
+                                        },
+                                        "archetype_node_id": "at0141",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": "mjIFuOWqvJ YJXcxpXSI,KFWRApgRGiUfsiQhZ,NbdteEIiTWbLfpknBEJQFgiBcBUKEGjJDsrIC.yH Y,lhENfSLdHrxrf.FcXwHOljSwUJvufqfRdUr,jujUPQjqtJEqbktRgRmCMU,o.cbGGsratwddZ.oZwFxhzXItlurMiWZl.gWOIpOznEhFN,jKlzmYLzpujyBxsEbGadIFnykKNiRUqMXHwGIKnNFH w,mRnLLdwRPmbTrECGV ZQTWWDRxreuVqU bvd.chywjjTYgGUZiCJLYlBWXyIpRny,DC"
+                                        }
+                                    },
+                                    {
+                                        "_type": "ELEMENT",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Administration method"
+                                        },
+                                        "archetype_node_id": "at0143",
+                                        "value": {
+                                            "_type": "DV_TEXT",
+                                            "value": " JPmGXpTkmWbrIwApAQSHSxigdGskHxYCWIbCujFFCHYEmyJrwp kfP,XVxYYxdVYAPZrEYDoCFltMUAnqyxZmyfZIVXEpRCkE.XDuLbbIuZaygByECPQTqyolVUAFG,IShTmhBzmzd.SOD RylIE,CwCWVZTBaKIOfkimZX,iIjeWKFoJwf.NNmqqjTQNNvNs FTEnShUnwuI brD,oqvSnNATReCFYlvJrdfmSTOYzhBdnQ.lsfQfz,mfn.rbRFKnS,IESNvMYrTMYKGukeSjfL eqOsBJZaHeQOEBcMOv"
+                                        }
+                                    },
+                                    {
+                                        "_type": "CLUSTER",
+                                        "name": {
+                                            "_type": "DV_TEXT",
+                                            "value": "Medical device"
+                                        },
+                                        "archetype_details": {
+                                            "archetype_id": {
+                                                "value": "openEHR-EHR-CLUSTER.device.v1"
+                                            },
+                                            "template_id": {
+                                                "value": "Medication_List.v1"
+                                            },
+                                            "rm_version": "1.0.2"
+                                        },
+                                        "archetype_node_id": "openEHR-EHR-CLUSTER.device.v1",
+                                        "items": [
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Device name"
+                                                },
+                                                "archetype_node_id": "at0001",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": " LVwNvWfn.SZiCVhG,uzGPbcH.IrXe ZDxJSJtjRVZPwDRnEJaCUfSHZtntpVmtNplNR,qksavFBkpgGelFeWLZunpJBcgstzqOL,HRYpwKv fKicDeNaHIozaycfdtzuoc REAbxQBJLEciaqOOpHgPKsKtHUqhpANCdyimkzrlDXRfs.kLGHXKRypxqcPhka,qeHTpeUnWXIiu,eMVZFxWNKXdrjfgO HfzCsECoEnABTH,lZklTuHKjxgCIxItwcqmPCtWmc.mkgFg DkAIPBna.YmrVTzUWMIcJppBBQ"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Type"
+                                                },
+                                                "archetype_node_id": "at0003",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Fa,,mbWVfsokKnHmUO evSmr.AhbWmbEkDJJmspVbfEgaPl,ZormXKJy.zySArhlfWLEVgHobMXbdxP, igIj,.HOiiDgvSszRD GGRWBfzkcTSTMoHBxIkQBEDZymEiUOtTzABaKzDWwQBBkQtNkpN.nAkygTD,OzgmljePZviUbuzaIOoZGMMrEWhzVmcTARCerxNVlYGhBuvPNGriDMclOsVD.ZTznRBmR.fqU, PpclYpKaoMSDPBZtokAKhZNK JOWrrJeOsDKMbtYSID PHGAk lhySWlfuxzOHeMu"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Description"
+                                                },
+                                                "archetype_node_id": "at0002",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "tx qVkrEQHJnIhzBjFftXbSC oZabiDTS.hqgHVKuINfWtkiYvlCMytDmMlyJKziERWQ jnD zWnMyFpHh,QFGNRalpFYEfPJVBQDZoQqRGrHMAKloyWLwRAzZNsfXyuEPKDxQQUYKdbdPMisJEwpBKnXGAcQJgzqlNdVi wwdnmYJsBzbSKGhoGPzmgUYuvZviXFMWMWBhznKRyREFiyvbeqaObMr,b FGTT,YmarA fZzXjKulLvNWpmUImCVLNMVIhTpILhKMAnQ,MPCJc,gJaKwWblGTaLmwrNAUoiuL"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Unique device identifier (UDI)"
+                                                },
+                                                "archetype_node_id": "at0021",
+                                                "value": {
+                                                    "_type": "DV_IDENTIFIER",
+                                                    "id": "72738862",
+                                                    "issuer": "Hospital de Clinicas",
+                                                    "assigner": "Hospital de Clinicas",
+                                                    "type": "LOCALID"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Manufacturer"
+                                                },
+                                                "archetype_node_id": "at0004",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "qNv,CSapwFwHhPpXN FaWJiAj,mTOkq.iPpf.Y.XPyclQeJnMXPVMxmWLFsGIrRFKYSm nfq.vM tqPuFeHnEmRGwUONhupNrXYsvnDJs,HATtLcSV,rEgOWBYLgkQGDDIjiVnhRlWngYqpIpTnqEmwlChKpqisLhiyUGoDoVlJmsCxilSKjBmoXdRLQoaJZizfyer.PALT Q YLphIJ.gaJSMhosqUAR fNjY v,zojZrO SdEIjjIlSdeBKRVCtQCiDmRsaKTbbuPSincRMG,qcpiPonkDxzANxckZ,SKM"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Date of manufacture"
+                                                },
+                                                "archetype_node_id": "at0005",
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2023-09-13T12:05:46.429+02:00"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Serial number"
+                                                },
+                                                "archetype_node_id": "at0020",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "KcrqTy,ZTMGb.COKQAGJwEcxbn,CToDLJKm,mIUycHSmkTcCyPPDBdTlhVEmcFLqkPdgZbw.DUerRRRdtFLOgsYf,mNeSvT,IKoI,GyrHAFelOwkJEECafp L,LsnYIwIpiFsvpFNdPcOnfFIuzCqpWQmFGXMrIDt uFekBg e.WnnJuhTgiYrITGKHEsIHADyHiparGOLuDeF.PiG,PqFoachMOGsPHPYtOHjkiAzgTLQK re rHVOfLSWPlkdjuQoJB.WUUjNBendjORWbTofQuDTdTtvYaadNtZNualDw"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Catalogue number"
+                                                },
+                                                "archetype_node_id": "at0022",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "AWAW jFHyzJaikR.eaHIywDDrOTyynTHxLPoDvLELNZJSRTJNLvYbtwdlQTpBCjchXc OcVKfnnOsJTN sDF.QYbY,HrNpCRMlthCMrkIjrpwg,dL,lrXdcIcYfp LlwWTNHJKMGjHk,.RfYjd uGJkzdhvDKHPXMZXLxMlSAuPQmo NWeE.jaCRRA.ewPVLrdFtkgKQDzDhBzAzszmI.ZvrkDPmdjbTvTzttWpOMlWpeLxRXQiDGzu,xrsSgiuDQOeX,FgNsoSD,HXwGzQzFuLvYDyTKvIHGAdVGTdKbxkJ"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Model number"
+                                                },
+                                                "archetype_node_id": "at0023",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "ipmzbLniyRzfsNHRgvUNmbZDiuIoejoSvO LWEKUMvZUlf,WDzjyQcPgZY GpE, f.zAvWwbWnzCZEXItMhTdmjzmGVmJzNjRXAIzPDF,z.mtENWXpaVhcaTjjAB.HzEXIZhdQMzwcbmHdbzsbRWXwfuivrLk.QtzFmTNrAjgQIfDdcTJrKrbd.sCzxVcVIoMcwbm pxVTUbAdWwzFCDZZPLVdmfWjpKkzEeupHEIikjWzeVNhTfYzUSRXLE,qENNPoAbuJoFK.wIQGVkjvkhRKbaQGnpHgbUxIbForC.FqA"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Batch/Lot number"
+                                                },
+                                                "archetype_node_id": "at0006",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "AtWIBxKHwPnOqUiiJSHyGkSZarlGP ph.FmKrg,kgYSv BkL IdkOFoQsmlhsuIGYf.ZrYKZcTgKErzMuQaqSnxYetfkQUfMiFFV,KioLoFHMbEGOSwSFjuYBUXtKQeruAYdcrGlMGzvtvAuIsDGfjTKjegWNtBgZLswSzitEceZIf GNGhgzRmQLztkodEqmwp,QqYlbKqiYyfqzSW k VBgIVx n,zInXAOMed,r wcGzMuoFgfmtLNbWGCQuRtxFmLP.,ErKtbk,rP UFJnQqeNDRYjxkJVBxUkxpLenF"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Software version"
+                                                },
+                                                "archetype_node_id": "at0025",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "AxtAjdgRcmEUYWS,g.zzvPzOuwBkdMUUvSyjzGNRnASTMlFHHPYuTgUE.MnTaZZQKegkRHguQvHvXLlZnBZAytIWSphmfP LUFOjFTTvWmOMCHptmE jldhNz H,jFqxmvYBxcgNfBXpRpwdQfaEaMa,LJFBzGSKCsQLxVqBHRP,TV .SoKnpyD rzdPETLMkIvZJjmoAPVQm,nUkNBdyRAbjB,bsn,BLOVIxRpCYHSumZEfyVtgcuCSgbFlRAjSxzvHPpqHitBFNHxSVolyvWkFeBbYndbqjP ZHlPTuJSv"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Date of expiry"
+                                                },
+                                                "archetype_node_id": "at0007",
+                                                "value": {
+                                                    "_type": "DV_DATE_TIME",
+                                                    "value": "2023-09-13T12:05:46.476+02:00"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Other identifier"
+                                                },
+                                                "archetype_node_id": "at0024",
+                                                "value": {
+                                                    "_type": "DV_IDENTIFIER",
+                                                    "id": "67239588",
+                                                    "issuer": "Hospital de Clinicas",
+                                                    "assigner": "Hospital de Clinicas",
+                                                    "type": "LOCALID"
+                                                }
+                                            },
+                                            {
+                                                "_type": "ELEMENT",
+                                                "name": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "Comment"
+                                                },
+                                                "archetype_node_id": "at0008",
+                                                "value": {
+                                                    "_type": "DV_TEXT",
+                                                    "value": "bvxiwgcKk.TpiWxbGwpydeJw TpNRXywDgakgpegGXqNiIkAYkMJPWEie,ATYfF.RjEoBsrcoEk,dAOSHklRwD..UZqctcfOrcyTnsbOSiCfnmK,aTxjKBdkIjaGskvdRTEAdJBeGhALCauuXDFnEgBY.cJbxZVpsSXypvEbuyvpwJmhvFixBhdmjwJDOikTaR.KBVJTRWWQAroVYNsDFyWvKEJuDsmVxg QCWyJH .qdlTkypzKfdKvFZZUBGIOJZbndtNqPLiRJashaZmnBgsNBUrhINlTgUPdqlJPVSpR"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Patient guidance"
+                                },
+                                "archetype_node_id": "at0033",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "jiJX.W.WppcuVmupzOyTiQdtVcYznWz kUUBOHMZEaIXCgxY.hrtZCSmunaZPcgUVVCVSLpOtiQeiVQPmYnuNHhpF.IRVkAOv.rnxHyygKHpXPHQYvWzrgtuILEeRJsgyCjaeBDhvfrQsytlzBjMVkuKzOvDiPPCQoczEfOUjsRROfthcgh.helKEIJTPF.o sprgI,swOYbTKVxFVexzqEkzbZxUIbSZpxniQWgOu ELeT.UMCiuuWmyzrGdcHoPc QtQfekSErhiBfEhYWRakyUbQuMRZNqdHwXJcqVxQ "
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Double-checked?"
+                                },
+                                "archetype_node_id": "at0149",
+                                "value": {
+                                    "_type": "DV_BOOLEAN",
+                                    "value": true
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Sequence number"
+                                },
+                                "archetype_node_id": "at0025",
+                                "value": {
+                                    "_type": "DV_COUNT",
+                                    "magnitude": 7
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "archetype_node_id": "at0024",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "MYGXiVltAJJ.GUjMyrQbfWZk.MWMyE.TpYNrQigAzZf NUoSBHBJJmOgnXkHFxwqeg..tfAw.GrrcIupGqvMkRzuCekYx CMNvYjFqVBdURZhmtEcg.QGZL ZXwWTUQdJqPGzIiWEgBKSNLZXlYdKQReYkIeZSCzqyvyBptmuN dDBKODXclY mb h,HPYPdR.EPlNVzQYRyKBgteVCqFBvHtrsCDuOsiGmoAfqTHADeCBPmEskyGCSTbtYiYljZbXAoAV ,wnYDRFIvMMUQIkTjbkQe QF.X dNNyJqxXHV"
+                                }
+                            }
+                        ]
+                    },
+                    "ism_transition": {
+                        "current_state": {
+                            "value": "planned",
+                            "defining_code": {
+                                "terminology_id": {
+                                    "_type": "TERMINOLOGY_ID",
+                                    "value": "openehr"
+                                },
+                                "code_string": "526"
+                            }
+                        }
+                    }
+                },
+                {
+                    "_type": "EVALUATION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Exclusion - global"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-EVALUATION.exclusion_global.v1"
+                        },
+                        "template_id": {
+                            "value": "Medication_List.v1"
+                        },
+                        "rm_version": "1.0.2"
+                    },
+                    "archetype_node_id": "openEHR-EHR-EVALUATION.exclusion_global.v1",
+                    "language": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "protocol": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0008",
+                        "items": [
+                            
+                        ]
+                    },
+                    "data": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0001",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_CODED_TEXT",
+                                    "value": "Global exclusion of medication use",
+                                    "defining_code": {
+                                        "terminology_id": {
+                                            "_type": "TERMINOLOGY_ID",
+                                            "value": "local"
+                                        },
+                                        "code_string": "at0005"
+                                    }
+                                },
+                                "archetype_node_id": "at0002",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "cdpvMEeXKmfAlixXdYApYeF CkUFyQeTVmEfbiMyu GuyrNaUoo BcNYXTp,aN.mYqmuSKRSGUnZOBWAQS QGcMDjYXsN.DJLDouuNCOCpSWhszeKqPTwEvcINSZRVOHP mqWTsBtugqvzeRXq,wiHbxr GLxJXoajTIwGzuVwUEQLVscxjHFFAYvew,UF,HnppQF sthuOTSaoynVhzDNVWaWjQVoGL.xTImMJnmcPCmgpLaQls CzYiUIFGdFxdURZIroIbXncVmcyRPSr gHYCEDfxqpvjBjFgZSpyYhG"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Comment"
+                                },
+                                "archetype_node_id": "at0011",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "ZNwDxECwRC ILpZy KhgyqaZSFQlSbTpzCTuFMrEgjxwgBNN ZThEa TBexaJkHWTnAbPmsmbiiVkFkklaifcFFIMVfrE.YRoelDvGEwGVdzlzTLhypoayS.RwPH. HHmzAtlmOTqRIwfCGCxVGowAyHlttzjnOPCQ NYXyClZxsRVuyzmR UiSdGNFoqTxByXVdKonXUEhQOigLLiYVWaPBdQbBjKbFtIfyJeZhyMlaCPBKSksCpfG kEmLqTFxkoaOWk.lWfzPdBciTMOnDfsEg RMIRiSIUu KfKgJXSV"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "_type": "EVALUATION",
+                    "name": {
+                        "_type": "DV_TEXT",
+                        "value": "Absence of information"
+                    },
+                    "archetype_details": {
+                        "archetype_id": {
+                            "value": "openEHR-EHR-EVALUATION.absence.v2"
+                        },
+                        "template_id": {
+                            "value": "Medication_List.v1"
+                        },
+                        "rm_version": "1.0.2"
+                    },
+                    "archetype_node_id": "openEHR-EHR-EVALUATION.absence.v2",
+                    "language": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "ISO_639-1"
+                        },
+                        "code_string": "en"
+                    },
+                    "encoding": {
+                        "terminology_id": {
+                            "_type": "TERMINOLOGY_ID",
+                            "value": "IANA_character-sets"
+                        },
+                        "code_string": "UTF-8"
+                    },
+                    "subject": {
+                        "_type": "PARTY_SELF"
+                    },
+                    "protocol": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0003",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Last updated"
+                                },
+                                "archetype_node_id": "at0004",
+                                "value": {
+                                    "_type": "DV_DATE_TIME",
+                                    "value": "2023-09-13T12:05:46.675+02:00"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "_type": "ITEM_TREE",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Tree"
+                        },
+                        "archetype_node_id": "at0001",
+                        "items": [
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Absence statement"
+                                },
+                                "archetype_node_id": "at0002",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "pGCuDqywFSwBLUrrRBVHmeJFCADiCqVOalAmUIVKDYIhSC,qvvJUXxDt.xsssffy vWv WitagcRIfDIRjdOFiBxVNEbHvzzbnPxCbUnf ckLKOp,jzMJqrGabNmJBNHmlOime AanXT.OYYXpjVMOpY.mxvnzHoTRYpYrN.aoXjOQyBbyyUdZ hhciXGOvmLajwutcDiieY,mFJpQCByBgZ.jbfVccchcCsBYzInkWHWK.PpCuDSWc,tVVnoWnLHEZiTZThlACOEIZyyNaCuMJczPuC.cFYeQzSGgMwxvUR"
+                                }
+                            },
+                            {
+                                "_type": "ELEMENT",
+                                "name": {
+                                    "_type": "DV_TEXT",
+                                    "value": "Reason for absence"
+                                },
+                                "archetype_node_id": "at0005",
+                                "value": {
+                                    "_type": "DV_TEXT",
+                                    "value": "C. bDrBpcvukjlLWKBIdYDQRyOzGHQRbCOdqDcj,RbVTeVvwWRSu.wEQokH hqZqUJmHgEkL ORWX,wEcKvW,oUoZGeTCXjiUQSftFCqmF lNIthDaQHWyttBNqEtIYtJjVwygXmVYLK,ANVypj.jPUYJHHVAbvuvHbzAoPxpruOEcbkxZbXUbXqXrVJhqY.iFfpNSYgwWDzcdBxtxPsyVJpRrWYAs uejWFja ,vmQRdWuajUFJWKhdZWLUTybGXnhEmje.RjPXrdWZTKgiFuUiVlhTGUrjtXeX,cY,YKKM"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
