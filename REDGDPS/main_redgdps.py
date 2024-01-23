@@ -1,7 +1,6 @@
 import streamlit as st
 import pymongo as py
 import datetime
-import json
 import uuid
 
 from REDGDPS.demographics import demographic_data,correct_dni,add_demographic_data
@@ -20,17 +19,28 @@ demographic_data_coll=myclient["Demographic_database"]["Demographic data"]
 def callback():
     #Button was clicked!
     st.session_state.clinical_interface= True
+    st.session_state.add_new_patient=False
 
 def callback_false():
     st.session_state.clinical_interface= False
 
+def callback_new_patient():
+    st.session_state.add_new_patient=True
+
+def callback_no_new_patient():
+    st.session_state.add_new_patient=False
+
 def main_redgdps_function():
+
     #----------------------------------------------------------------------------
     if "clinical_interface" not in st.session_state:
         st.session_state.clinical_interface=False
 
     if "uuid" not in st.session_state:
         st.session_state.uuid=""
+
+    if "add_new_patient" not in st.session_state:
+        st.session_state.add_new_patient=False
     #----------------------------------------------------------------------------
     m = st.markdown("""
         <style>
@@ -40,66 +50,88 @@ def main_redgdps_function():
         </style>""", unsafe_allow_html=True)
 
     #----------------------------------------------------------------------------
-
     if st.session_state.clinical_interface == False:
-        
-        st.subheader("Phone Number:")
-        phone_number=st.text_input("enter your phone number:",label_visibility ="collapsed")
-        if len(phone_number)==0:
-            st.warning(": You entered nothing !" ,icon="⚠️")
+
+        if st.session_state.add_new_patient==False:
+
+            #--------------------------------------------------------------------------------------------------
+            st.sidebar.info(': Click on the "Add a New Patient" button below, to add a new patient',icon="⛔")
+            st.sidebar.button("Add a New Patient", on_click= callback_new_patient)
+            #--------------------------------------------------------------------------------------------------
+
+            from REDGDPS.occurrence import get_top_patients_uuids, identify_patient
+            from REDGDPS.patient_finder import patient_data,query_patient
+            from REDGDPS.query_clinical_data import plots_displaying
+
+            top_patient_uuids = get_top_patients_uuids()
+            patients_list=identify_patient(top_patient_uuids)
+            patients_list.append("None")
+
+            selected_patient=st.selectbox("You can choose your patient from here:", patients_list, index=10)
+            
+            if selected_patient==None or selected_patient=="None":
+
+                name, gender, phone_number = patient_data()
+
+                if len(phone_number)==0 or len(name)==0:
+                    st.error(": You must enter the Name and the Phone Number of the patient!", icon="🚨")
+                else:
+                    query_condition = query_patient(name, phone_number, gender)
+                    plots_displaying(query_condition)
+            #----------------------------------------------------------------------------------------------
+            #here we work on the case of choosing a patient from the suggested list:
+            else:
+                patient_uuid=top_patient_uuids[patients_list.index(selected_patient)]
+                query_condition={"uuid": patient_uuid}
+                plots_displaying(query_condition)
+
+        #--------------------------------------------------------------------------------------------------
+        #Here we'll be working on the creation of a new patient:
         else:
-            encrypted_phone_number= encrypt_data(phone_number)
-            demographic_doc=demographic_data_coll.find_one({'phone number': encrypted_phone_number})
 
-            if(demographic_doc):
-                patient_name=decrypt_data(demographic_doc["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"])
-                patient_surname=decrypt_data(demographic_doc["demographic data"]["identities"][0]["details"]["items"][1]["value"]["value"])
-                gender="Mrs"
-                patient_gender=decrypt_data(demographic_doc["demographic data"]["details"]["items"][0]["items"][4]["value"]["value"])
-                if patient_gender=="MALE":
-                    gender="Mr"
+            st.sidebar.info(': To cancel the addition of a new patient click on the "Cancel" button below',icon="⛔")
+            col21, col22, col23 = st.sidebar.columns([1,2,1])
+            with col22:
+                no_new_patient = st.sidebar.button("Cancel", on_click= callback_no_new_patient)
 
-                st.success(f"Hello {gender} {patient_name} {patient_surname}!")
+            st.info("Welcome! please fill carefully the demographic form below")
 
-                st.session_state.uuid=demographic_doc["uuid"]
-                st.warning("CLick on the button below to move to clinical interface" ,icon="⚠️")
+            st.markdown("<h1 style='color: #0B5345;'>Phone Number:</h1>", unsafe_allow_html = True)
+            phone_number=st.text_input("enter your phone number:",label_visibility ="collapsed")
+            if len(phone_number)==0:
+                st.warning(": You entered nothing !" ,icon="⚠️")
+
+            name,surname,dni,status,birthday,country_of_birth,province_birth,town_birth,street_name,street_number,postal_code,correct_postal_code,country,province,town=demographic_data()
+            if( len(phone_number)>0 and len(name)>0 and len(surname)>0 and correct_dni(dni) and len(province_birth)>0 and len(country_of_birth)>0 and len(town_birth)>0 and len(street_name)>0 and street_number>0 and correct_postal_code and len(country)>0 and len(province)>0 and len(town)>0):                
+                #demographic data:
+                json_object_demographic_data=add_demographic_data(name,surname,dni,status,birthday,country_of_birth,province_birth,town_birth,street_name,street_number,postal_code,country,province,town)
+                
+                st.write("#")
                 col1, col2, col3 = st.columns([4,2,3])
                 with col2:    
-                    move_to_clinical = st.button("Move to Clinical Interface",on_click=callback)
-                if move_to_clinical:
-                    pass
-            else:
-                st.info("This phone number doesn't exist in Database! You're a new patient! please fill this demographic form below")    
-                name,surname,dni,status,birthday,country_of_birth,province_birth,town_birth,street_name,street_number,postal_code,correct_postal_code,country,province,town=demographic_data()
-                if( len(name)>0 and len(surname)>0 and correct_dni(dni) and len(province_birth)>0 and len(country_of_birth)>0 and len(town_birth)>0 and len(street_name)>0 and street_number>0 and correct_postal_code and len(country)>0 and len(province)>0 and len(town)>0):                
-                    #demographic data:
-                    json_object_demographic_data=add_demographic_data(name,surname,dni,status,birthday,country_of_birth,province_birth,town_birth,street_name,street_number,postal_code,country,province,town)
-                    
-                    st.write("#")
-                    col1, col2, col3 = st.columns([4,2,3])
-                    with col2:    
-                        save_demographics = st.button("Done")
-                    
-                    if save_demographics:
-                        st.session_state.uuid=str(uuid.uuid4())
-                        demographic_doc={
-                        "uuid": st.session_state.uuid,
-                        "phone number": encrypt_data(phone_number),
-                        "current date": encrypt_data(str(datetime.date.today())),
-                        "demographic data": json_object_demographic_data
-                        }
-                        demographic_data_coll.insert_one(demographic_doc)
-                        st.success("Patient's data added to database",icon="✅")
-                        st.warning("CLick on the button below to move to clinical interface" ,icon="⚠️")
+                    save_demographics = st.button("Done")
+                
+                if save_demographics:
+                    st.session_state.uuid=str(uuid.uuid4())
 
-                        col1, col2, col3 = st.columns([4,2,3])
-                        with col2:    
-                            move_to_clinical = st.button("Move to Clinical Interface",on_click=callback)
-                        if move_to_clinical:
-                            pass
-                else:
-                    st.write("#")
-                    st.error(": One of the values you entered is invalid, Please check them carefully!",icon="⛔")
+                    demographic_doc={
+                    "uuid": st.session_state.uuid,
+                    "phone number": encrypt_data(phone_number),
+                    "current date": encrypt_data(str(datetime.date.today())),
+                    "demographic data": json_object_demographic_data
+                    }
+                    demographic_data_coll.insert_one(demographic_doc)
+                    st.success("Patient's data added to database",icon="✅")
+
+                    st.warning("CLick on the button below to move to clinical interface" ,icon="⚠️")
+                    col1, col2, col3 = st.columns([4,2,3])
+                    with col2:
+                        move_to_clinical = st.button("Move to Clinical Interface",on_click=callback)
+
+                    st.title("Actual OpenEHR (.json) demographic register:")
+                    st.json(json_object_demographic_data)
+                    
+    #--------------------------------------------------------------------------------------------------
     else:
         #--------------------------------------------------------------------------------------------
         #--------------------------------------------------------------------------------------------
@@ -115,14 +147,7 @@ def main_redgdps_function():
         else:
             previous_state="Two previous times or more"
         #---------------------------------------------------------------------------------------------
-        st.write("#")
-        if occurence>0:
-            st.info(f": Your total number of clinical documents stored in database is {occurence}", icon="🚨")
-        else:
-            st.info(": Till now you don't have any clinical document stored in database", icon="🚨")
-
-        st.write("#")
-        st.write("#")
+        st.info(f"Your total number of clinical documents found in database is: {occurence}")
         #--------------------------------------------------------------------------------------------
         from REDGDPS.clinical_data_form import clinical_data_
         current_HbA1c,symptoms,current_BMI,height,weight,current_eGFR,current_UACR,CVRFs,frailty,heart_failure,established_CVD,hepatic_steatosis,strokes=clinical_data_()
