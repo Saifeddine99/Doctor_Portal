@@ -89,7 +89,7 @@ def plots_displaying(query_condition):
         if gender=="MALE":
             symbol="Mr"
 
-        st.success(f": Hello {symbol} {patient_name} {patient_surname}!", icon="➡️")
+        st.success(f": Hello {symbol} {patient_name} {patient_surname}!, uuid={patient_uuid}", icon="➡️")
 
         st.session_state.uuid=patient_uuid
 

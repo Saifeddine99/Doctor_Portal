@@ -121,7 +121,7 @@ def main_redgdps_function():
                     "demographic data": json_object_demographic_data
                     }
                     demographic_data_coll.insert_one(demographic_doc)
-                    st.success("Patient's data added to database",icon="✅")
+                    st.success(f"Patient's data added to database, uuid={st.session_state.uuid}",icon="✅")
 
                     st.warning("CLick on the button below to move to clinical interface" ,icon="⚠️")
                     col1, col2, col3 = st.columns([4,2,3])
@@ -245,7 +245,7 @@ def main_redgdps_function():
                 medical_hist_coll.insert_one(medical_history_dict)
 
                 st.write("#")
-                st.success(": File saved well" ,icon="✅")
+                st.success(f": File saved well, uuid={st.session_state.uuid}" ,icon="✅")
             
         else:
             st.error(
