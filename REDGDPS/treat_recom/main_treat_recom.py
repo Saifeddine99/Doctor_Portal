@@ -55,8 +55,8 @@ def main_get_treat(frailty,heart_failure,established_CVD,hepatic_steatosis,strok
     elif(condition[0]=="established_cvd_or_high_cvr"):
         proposed_med,next_date=established_cvd(hba1c_records,previous_state,current_drugs)  
     elif(condition[0]=="critical_chronic_kidney_disease"):
-        proposed_med,next_date=critical_chronic_kidney_disease_(hba1c_records,previous_state,current_drugs) #Not_righttttt         
+        proposed_med,next_date=critical_chronic_kidney_disease_(hba1c_records,previous_state,current_drugs) #Not_righttttt
     elif(condition[0]=="non_critical_chronic_kidney_disease"):
         proposed_med,next_date=non_critical_chronic_kidney_disease_(hba1c_records,previous_state,current_eGFR,current_UACR,current_drugs) #Not_righttttt
-
+        
     return(proposed_med,next_date) 

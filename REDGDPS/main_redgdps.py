@@ -3,6 +3,9 @@ import pymongo as py
 import datetime
 import uuid
 
+import re
+import ast
+
 from REDGDPS.demographics import demographic_data,correct_dni,add_demographic_data
 from encrypt import encrypt_data
 from decrypt import decrypt_data
@@ -63,11 +66,12 @@ def main_redgdps_function():
             from REDGDPS.patient_finder import patient_data,query_patient
             from REDGDPS.query_clinical_data import plots_displaying
 
-            top_patient_uuids = get_top_patients_uuids()
-            patients_list=identify_patient(top_patient_uuids)
-            patients_list.append("None")
 
-            selected_patient=st.selectbox("You can choose your patient from here:", patients_list, index=10)
+            patients_list = ["None"]
+            top_patient_uuids = get_top_patients_uuids()
+            patients_list.extend(identify_patient(top_patient_uuids))
+
+            selected_patient=st.selectbox("You can choose your patient from here:", patients_list, index=0)
             
             if selected_patient==None or selected_patient=="None":
 
@@ -157,15 +161,43 @@ def main_redgdps_function():
 
         current_drugs={}
         if previous_state!="First time":
-            extracted_medication_list = medical_data_coll.find_one(
-            {'uuid': st.session_state.uuid},
-            sort=[( '_id', py.DESCENDING )]
-            )["medication list"]
+            try:
+                extracted_medication_list = medical_data_coll.find_one(
+                {'uuid': st.session_state.uuid},
+                sort=[( '_id', py.DESCENDING )]
+                )["medication list"]
+            except:
+                extracted_medication_list = []
 
             for drug_json_file in extracted_medication_list:
                 drug=decrypt_data(drug_json_file["content"][0]["items"][0]["description"]["items"][0]["value"]["value"])
                 dose=decrypt_data(drug_json_file["content"][0]["items"][0]["description"]["items"][2]["items"][3]["value"]["value"])
                 current_drugs[drug]=dose
+        
+            #------------------------------------------------------------------------------------------------------
+            # Here we'll add a selection box allowing user to choose the actual chosen treatment from the proposed list:
+            list_current_drugs = list(current_drugs)
+            for recommendation in list_current_drugs:
+                item_list = []
+                if "YOU CAN CHOOSE ANY ITEM FROM THIS LIST" in recommendation:
+                    match = re.search(r'\[(.*?)\]', recommendation)
+                    if match:
+                        # Extract the matched string
+                        list_str = match.group(0)
+                        # Safely evaluate the string to a list
+                        item_list = ast.literal_eval(list_str)
+                
+                elif " or " in recommendation:
+                    item_list = recommendation.split(' or ')
+
+                if item_list:
+                    selected_drug = st.selectbox("Select the chosen drug from the previous proposed list:", item_list)
+
+                    # Update the key
+                    current_drugs[selected_drug] = current_drugs.pop(recommendation)
+
+                    st.write("Current drugs: ", current_drugs)
+
 
         #---------------------------------------------------------------------------------------------------------------
         #Here we'll extract the user's previous HbA1c records from database:

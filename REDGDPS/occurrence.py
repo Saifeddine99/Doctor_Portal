@@ -36,8 +36,9 @@ def identify_patient(top_patient_uuids):
         symbol="Mrs"
         if gender=="MALE":
             symbol="Mr"
-        
-        detailed_ident= symbol + " " + patient_name + " " + patient_surname +", Phone number:("+phone_number+")"
 
-        patients_list.append(detailed_ident)
+        if patient_name != "PATIENT":
+            detailed_ident= symbol + " " + patient_name + " " + patient_surname +", Phone number:("+phone_number+")"
+            patients_list.append(detailed_ident)
+            
     return patients_list
