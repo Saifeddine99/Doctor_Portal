@@ -8,7 +8,7 @@ def established_cvd(hba1c_records,previous_state,med_dose_last_time):
     #If the patient will get treatment for the first time
     if(previous_state=="First time"):
         proposed_med[("Metformin").upper()]=full_dose
-        proposed_med["SGLT2i or GLP1RA"]=full_dose
+        proposed_med[("SGLT2i or GLP1RA").upper()]=full_dose
     else:
         #The target variable represents the threshold to decide whether the patient achieved objective or not
         target_=6.5 ####target(previous_state,med_dose_last_time)
@@ -26,7 +26,7 @@ def established_cvd(hba1c_records,previous_state,med_dose_last_time):
                     second_or_third_med_level.remove(("DPP4i").upper())
                     second_or_third_med_level.remove(("oral GLP1ra").upper())
 
-                proposed_med["You can choose any item from this list: {}".format(second_or_third_med_level)]=full_dose
+                proposed_med[("You can choose any item from this list: {}".format(second_or_third_med_level)).upper()]=full_dose
             # Here we move to the step of recommending basal insulin
             elif(("Metformin").upper() in med_dose_last_time and not(("Basal insulin").upper() in med_dose_last_time) and len(med_dose_last_time)>=3 and ((("SGLT2i").upper() in med_dose_last_time and not(("GLP1RA").upper() in med_dose_last_time)) or (("GLP1RA").upper() in med_dose_last_time and not(("DPP4i").upper() in med_dose_last_time) and not(("oral GLP1ra").upper() in med_dose_last_time)))):
                 drugs=list(med_dose_last_time.keys())

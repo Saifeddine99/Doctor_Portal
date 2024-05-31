@@ -85,7 +85,7 @@ def main_redgdps_function():
             #----------------------------------------------------------------------------------------------
             #here we work on the case of choosing a patient from the suggested list:
             else:
-                patient_uuid=top_patient_uuids[patients_list.index(selected_patient)]
+                patient_uuid=top_patient_uuids[patients_list.index(selected_patient)-1]
                 query_condition={"uuid": patient_uuid}
                 plots_displaying(query_condition)
 
@@ -187,8 +187,8 @@ def main_redgdps_function():
                         # Safely evaluate the string to a list
                         item_list = ast.literal_eval(list_str)
                 
-                elif " or " in recommendation:
-                    item_list = recommendation.split(' or ')
+                elif " OR " in recommendation:
+                    item_list = recommendation.split(' OR ')
 
                 if item_list:
                     selected_drug = st.selectbox("Select the chosen drug from the previous proposed list:", item_list)

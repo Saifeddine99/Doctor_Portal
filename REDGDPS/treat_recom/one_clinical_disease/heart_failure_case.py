@@ -19,7 +19,7 @@ def heart_failure_(hba1c_records,previous_state,med_dose_last_time):
             if(("Metformin").upper() in med_dose_last_time and ("SGLT2i").upper() in med_dose_last_time and len(med_dose_last_time)==2):
                 proposed_med[("Metformin").upper()]=full_dose
                 proposed_med[("SGLT2i").upper()]=full_dose
-                proposed_med["You can choose any item from this list: {}".format(second_or_third_med_level)]=full_dose
+                proposed_med[("You can choose any item from this list: {}".format(second_or_third_med_level)).upper()]=full_dose
             # Here we move to the step of recommending basal insulin
             elif(("Metformin").upper() in med_dose_last_time and not(("Basal insulin").upper() in med_dose_last_time) and ("SGLT2i").upper() in med_dose_last_time and len(med_dose_last_time)>=3 ):
                 drugs=list(med_dose_last_time.keys())

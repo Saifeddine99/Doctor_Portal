@@ -9,7 +9,7 @@ def ckd_ob_cvr(current_eGFR,current_UACR,current_BMI,CVRFs):
 
 def clinical_priorities(obesity, frailty, chronic_kidney_disease, heart_failure, established_CVD,High_CVR,current_eGFR,current_UACR):
 
-    if(obesity==frailty==chronic_kidney_disease==heart_failure==established_CVD=='NO'):
+    if(obesity==frailty==chronic_kidney_disease==High_CVR==heart_failure==established_CVD=='NO'):
         return(['No other clinical conditions',])
     
     #Before deployment, this part needs to be checked by an expert:

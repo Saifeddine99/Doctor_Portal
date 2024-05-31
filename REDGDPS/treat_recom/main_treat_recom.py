@@ -34,6 +34,7 @@ def main_get_treat(frailty,heart_failure,established_CVD,hepatic_steatosis,strok
     # condition is variable containing patient's most prioritary disease in addition to diabetes 
     #visit the "clinical_priorities" function to understand more
     condition=clinical_priorities(obesity,frailty,chronic_kidney_disease,heart_failure,established_CVD,High_CVR,current_eGFR,current_UACR)
+    st.write(condition)
     #----------------------------------------------------------------------------------------------------------------
     #Here we display in interface the most prioritary clinical condition:
     if(condition[0]=='No other clinical conditions'):
