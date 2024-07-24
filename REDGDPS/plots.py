@@ -9,7 +9,8 @@ def test_results_time_series(test_results_dict, y_axis_name):
         test_results= list(test_results_dict.values())
 
         # Convert dates to datetime objects
-        date_objects = [datetime.strptime(date, "%Y-%m-%d") for date in dates]
+        date_objects = [datetime.strptime(date, "%Y-%m-%d %H:%M:%S") for date in dates]
+
 
         # Create a Plotly figure
         fig = go.Figure()
