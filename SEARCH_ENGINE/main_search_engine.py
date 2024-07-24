@@ -114,15 +114,16 @@ def main_search_engine_function():
             common_uuid=extract_common_elements(query_demog_result,query_med_data_result,query_med_hist_result)
 
             #consent_uuids is the list of "uuid" of all patients that accepted to share their medical data (Anonymized)
-
-            #extracting uuids of patients with consents:
-            #consent_uuids=[]
-            #for uuid_value in common_uuid:
-            #    patient_name = demographic_data_coll.find_one({"uuid":uuid_value})["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"]
-            #    decision=previous_decision(patient_name,uuid_value)
-            #    if decision!= "NO":
-            #        consent_uuids.append(uuid_value)
-            consent_uuids=common_uuid
+            if len(common_uuid)<=3:
+                extracting uuids of patients with consents:
+                consent_uuids=[]
+                for uuid_value in common_uuid:
+                    patient_name = demographic_data_coll.find_one({"uuid":uuid_value})["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"]
+                    decision=previous_decision(patient_name,uuid_value)
+                    if decision!= "NO":
+                        consent_uuids.append(uuid_value)
+            else:
+                consent_uuids=common_uuid
 
             st.write("#")
 
