@@ -115,7 +115,7 @@ def main_search_engine_function():
 
             #consent_uuids is the list of "uuid" of all patients that accepted to share their medical data (Anonymized)
             if len(common_uuid)<=3:
-                extracting uuids of patients with consents:
+                #extracting uuids of patients with consents:
                 consent_uuids=[]
                 for uuid_value in common_uuid:
                     patient_name = demographic_data_coll.find_one({"uuid":uuid_value})["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"]
