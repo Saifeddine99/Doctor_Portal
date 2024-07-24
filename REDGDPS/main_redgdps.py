@@ -1,6 +1,6 @@
 import streamlit as st
 import pymongo as py
-import datetime
+from datetime import datetime
 import uuid
 
 import re
@@ -117,11 +117,14 @@ def main_redgdps_function():
                 
                 if save_demographics:
                     st.session_state.uuid=str(uuid.uuid4())
-
+                    
+                    current_datetime = datetime.now()
+                    current_datetime_str = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+                    
                     demographic_doc={
                     "uuid": st.session_state.uuid,
                     "phone number": encrypt_data(phone_number),
-                    "current date": encrypt_data(str(datetime.date.today())),
+                    "current date": encrypt_data(current_datetime_str),
                     "demographic data": json_object_demographic_data
                     }
                     demographic_data_coll.insert_one(demographic_doc)
@@ -254,11 +257,12 @@ def main_redgdps_function():
                 json_object_encounter_symptoms = save_symptoms(symptoms)
                 age_json_compo = save_age_to_compo(age)
 
-                current_date=str(datetime.date.today())
+                current_datetime = datetime.now()
+                current_datetime_str = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
                 medical_data_dict={
                     "uuid": st.session_state.uuid,
-                    "check date": encrypt_data(current_date),
+                    "check date": encrypt_data(current_datetime_str),
                     "problem list": problem_list,
                     "risk factors": risk_factors,
                     "medication list": medication_list,
@@ -269,7 +273,7 @@ def main_redgdps_function():
 
                 medical_history_dict={
                     "uuid": st.session_state.uuid,
-                    "check date": encrypt_data(current_date),
+                    "check date": encrypt_data(current_datetime_str),
                     "analytics": [laboratory_test_results_list, json_object_bmi],
                 }
 
