@@ -11,6 +11,8 @@ from SEARCH_ENGINE.verification import previous_decision
 from SEARCH_ENGINE.dictionary_generation import dict_generation
 from SEARCH_ENGINE.plots import plotting
 
+from decrypt import decrypt_data
+
 #-----------------------------------------------------------------------------
 myclient=py.MongoClient("mongodb://localhost:27017")
 #Relating data to "clinical_data"
@@ -112,13 +114,13 @@ def main_search_engine_function():
             #Matching "uuid":
             #this function extracts the list of common "uuid"s.
             common_uuid=extract_common_elements(query_demog_result,query_med_data_result,query_med_hist_result)
-
+            
             #consent_uuids is the list of "uuid" of all patients that accepted to share their medical data (Anonymized)
             if len(common_uuid)<=3:
                 #extracting uuids of patients with consents:
                 consent_uuids=[]
                 for uuid_value in common_uuid:
-                    patient_name = demographic_data_coll.find_one({"uuid":uuid_value})["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"]
+                    patient_name = decrypt_data(demographic_data_coll.find_one({"uuid":uuid_value})["demographic data"]["identities"][0]["details"]["items"][0]["value"]["value"])
                     decision=previous_decision(patient_name,uuid_value)
                     if decision!= "NO":
                         consent_uuids.append(uuid_value)
